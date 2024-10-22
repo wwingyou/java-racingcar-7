@@ -9,6 +9,10 @@ public class Car {
     private int progress;
     private RandomGenerator randomGenerator;
 
+    public Car(String name) {
+        this(name, MissionRandomGenerator.getInstance());
+    }
+
     public Car(String name, RandomGenerator randomGenerator) {
         this.name = name;
         this.randomGenerator = randomGenerator;
