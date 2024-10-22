@@ -13,20 +13,34 @@ public class Game {
     public Game() {}
 
     public void addCar(String name) {
-        // TODO: implement method
+        this.addCar(name, MissionRandomGenerator.getInstance());
     }
 
     public void addCar(String name, RandomGenerator randomGenerator) {
-        // TODO: implement method
+        Car car = new Car(name, randomGenerator);
+        cars.add(car);
     }
 
     public void progress() {
-        // TODO: implement method
+        for (Car car: cars) {
+            car.moveOrStop();
+        }
     }
 
     public List<Car> getWinners() {
-        // TODO: implement method
-        return null;
+        int maxProgress = 0;
+        List<Car> winners = new ArrayList<>();
+        for (Car car: cars) {
+            if (car.getProgress() > maxProgress) {
+                winners.clear();
+                winners.add(car);
+                maxProgress = car.getProgress();
+            } else if (car.getProgress() == maxProgress) {
+                winners.add(car);
+            }
+        }
+
+        return winners;
     }
 
     public List<Car> getCars() {
