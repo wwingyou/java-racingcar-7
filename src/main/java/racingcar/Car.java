@@ -1,5 +1,6 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
 /**
  * Car
  */
@@ -13,7 +14,10 @@ public class Car {
     }
 
     public void moveOrStop() {
-        // TODO: implement method
+        int randomNumber = Randoms.pickNumberInRange(0, 9);
+        if (randomNumber >= 4) {
+            progress += 1;
+        }
     }
 
     @Override
@@ -23,12 +27,10 @@ public class Car {
     }
 
     public String getName() {
-        // TODO: implement method
-        return null;
+        return name;
     }
 
     public int getProgress() {
-        // TODO: implement method
-        return 0;
+        return progress;
     }
 }
