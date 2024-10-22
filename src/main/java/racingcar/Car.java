@@ -9,7 +9,7 @@ public class Car {
     private String name;
     private int progress;
 
-    public Car(String name) {
+    public Car(String name, RandomGenerator randomGenerator) {
         this.name = name;
     }
 
