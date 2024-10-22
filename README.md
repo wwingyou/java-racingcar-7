@@ -1,6 +1,6 @@
 # java-racingcar-precourse
 
-# Features
+## Features
 
 - [x] implement car
     - [x] randomly move or stop
