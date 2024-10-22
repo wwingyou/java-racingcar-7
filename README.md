@@ -6,10 +6,10 @@
     - [x] randomly move or stop
     - [x] set name
     - [x] print status
-- [ ] implement game
-    - [ ] set cars
-    - [ ] move cars
-    - [ ] find winners
+- [x] implement game
+    - [x] set cars
+    - [x] move cars
+    - [x] find winners
 - [ ] implement cli
     - [ ] parse user input
     - [ ] print status and result
