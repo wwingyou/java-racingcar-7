@@ -2,10 +2,10 @@
 
 # Features
 
-- [ ] implement car
-    - [ ] randomly move or stop
-    - [ ] set name
-    - [ ] print status
+- [x] implement car
+    - [x] randomly move or stop
+    - [x] set name
+    - [x] print status
 - [ ] implement game
     - [ ] set cars
     - [ ] move cars
