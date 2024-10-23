@@ -1,5 +1,6 @@
 package racingcar;
 
+import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
@@ -11,8 +12,8 @@ import org.junit.jupiter.api.Test;
  */
 public class GameTest {
 
-    private final StaticRandomGenerator zeroGenerator = new StaticRandomGenerator(0);
-    private final StaticRandomGenerator nineGenerator = new StaticRandomGenerator(9);
+    private final static int MOVE = 9;
+    private final static int STOP = 0;
 
     @Test
     void set_cars() {
@@ -28,13 +29,19 @@ public class GameTest {
     @Test
     void move_cars() {
         Game game = new Game();
-        game.addCar("bentley", nineGenerator);
-        game.addCar("genesis", nineGenerator);
-        game.addCar("mini", zeroGenerator);
+        game.addCar("bentley");
+        game.addCar("genesis");
+        game.addCar("mini");
 
-        game.progress();
-        game.progress();
-        game.progress();
+        assertRandomNumberInRangeTest(() -> {
+            game.progress();
+            game.progress();
+            game.progress();
+        },
+            MOVE, MOVE, STOP,
+            MOVE, MOVE, STOP,
+            MOVE, MOVE, STOP
+        );
 
         List<Car> cars = game.getCars();
         assertThat(cars.get(0).getProgress()).isEqualTo(3);
@@ -45,13 +52,19 @@ public class GameTest {
     @Test
     void find_winners() {
         Game game = new Game();
-        game.addCar("bentley", nineGenerator);
-        game.addCar("genesis", nineGenerator);
-        game.addCar("mini", zeroGenerator);
+        game.addCar("bentley");
+        game.addCar("genesis");
+        game.addCar("mini");
 
-        game.progress();
-        game.progress();
-        game.progress();
+        assertRandomNumberInRangeTest(() -> {
+            game.progress();
+            game.progress();
+            game.progress();
+        },
+            MOVE, MOVE, STOP,
+            MOVE, MOVE, STOP,
+            MOVE, MOVE, STOP
+        );
 
         List<Car> winners = game.getWinners();
         assertThat(winners).size().isEqualTo(2);
