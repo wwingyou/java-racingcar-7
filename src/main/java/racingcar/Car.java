@@ -11,6 +11,7 @@ public class Car {
     private int progress;
 
     public Car(String name) {
+        if (name.length() > 5) throw new IllegalArgumentException();
         this.name = name;
     }
 
