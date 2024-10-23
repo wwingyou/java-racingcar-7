@@ -1,6 +1,8 @@
 package racingcar;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +17,7 @@ public class CarTest {
 
     @Test
     void car_move() {
-        Car car = new Car("benltey");
+        Car car = new Car("pobi");
 
         assertRandomNumberInRangeTest(() -> {
             car.moveOrStop();
@@ -26,13 +28,22 @@ public class CarTest {
 
     @Test
     void car_stop() {
-        Car car = new Car("benltey");
+        Car car = new Car("pobi");
 
         assertRandomNumberInRangeTest(() -> {
             car.moveOrStop();
         }, STOP);
 
         Assertions.assertThat(car.getProgress()).isEqualTo(0);
+    }
+
+    @Test
+    void name_longer_than_5_not_accepted() {
+        String name = "benlty";
+
+        Throwable throwable = catchThrowable(() -> new Car(name));
+
+        assertThat(throwable).isInstanceOf(IllegalArgumentException.class);
     }
 
 }

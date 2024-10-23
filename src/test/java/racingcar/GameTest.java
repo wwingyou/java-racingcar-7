@@ -19,9 +19,9 @@ public class GameTest {
     void set_cars() {
         Game game = new Game();
 
-        game.addCar("bentley");
-        game.addCar("genesis");
-        game.addCar("mini");
+        game.addCar("pobi");
+        game.addCar("woni");
+        game.addCar("jun");
 
         assertThat(game.getCars()).size().isEqualTo(3);
     }
@@ -29,9 +29,9 @@ public class GameTest {
     @Test
     void move_cars() {
         Game game = new Game();
-        game.addCar("bentley");
-        game.addCar("genesis");
-        game.addCar("mini");
+        game.addCar("pobi");
+        game.addCar("woni");
+        game.addCar("jun");
 
         assertRandomNumberInRangeTest(() -> {
             game.progress();
@@ -52,9 +52,9 @@ public class GameTest {
     @Test
     void find_winners() {
         Game game = new Game();
-        game.addCar("bentley");
-        game.addCar("genesis");
-        game.addCar("mini");
+        game.addCar("pobi");
+        game.addCar("woni");
+        game.addCar("jun");
 
         assertRandomNumberInRangeTest(() -> {
             game.progress();
@@ -68,7 +68,7 @@ public class GameTest {
 
         List<Car> winners = game.getWinners();
         assertThat(winners).size().isEqualTo(2);
-        assertThat(winners.get(0).getName()).isEqualTo("bentley");
-        assertThat(winners.get(1).getName()).isEqualTo("genesis");
+        assertThat(winners.get(0).getName()).isEqualTo("pobi");
+        assertThat(winners.get(1).getName()).isEqualTo("woni");
     }
 }
