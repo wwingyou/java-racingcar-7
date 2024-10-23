@@ -10,10 +10,10 @@
     - [x] set cars
     - [x] move cars
     - [x] find winners
-- [ ] implement cli
-    - [ ] parse user input
-    - [ ] print status and result
-    - [ ] handle exceptions
+- [x] implement cli
+    - [x] parse user input
+    - [x] print status and result
+    - [x] handle exceptions
 
 ## Spec
 
