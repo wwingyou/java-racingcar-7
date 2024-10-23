@@ -22,7 +22,7 @@ public class Application {
         for (int i = 0; i < stage; i++) {
             game.progress();
             for (Car car : game.getCars()) {
-                System.out.println(car);
+                System.out.println(statusStringOf(car));
             }
             System.out.println();
         }
@@ -34,5 +34,13 @@ public class Application {
 
         sb.delete(sb.length() - 2, sb.length());
         System.out.println("최종 우승자 : " + sb.toString());
+    }
+
+    private static String statusStringOf(Car car) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < car.getProgress(); i++) {
+            sb.append('-');
+        }
+        return car.getName() + " : " + sb.toString();
     }
 }

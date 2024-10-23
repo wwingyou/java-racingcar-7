@@ -35,16 +35,4 @@ public class CarTest {
         Assertions.assertThat(car.getProgress()).isEqualTo(0);
     }
 
-    @Test
-    void car_print_status() {
-        Car car = new Car("benltey");
-
-        assertRandomNumberInRangeTest(() -> {
-            car.moveOrStop();
-            car.moveOrStop();
-            car.moveOrStop();
-        }, MOVE, STOP, MOVE);
-
-        Assertions.assertThat(car.toString()).isEqualTo("benltey : --");
-    }
 }

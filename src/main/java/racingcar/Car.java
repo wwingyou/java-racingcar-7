@@ -21,15 +21,6 @@ public class Car {
         }
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < progress; i++) {
-            sb.append('-');
-        }
-        return name + " : " + sb.toString();
-    }
-
     public String getName() {
         return name;
     }
