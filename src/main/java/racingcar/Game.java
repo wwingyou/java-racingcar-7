@@ -13,11 +13,7 @@ public class Game {
     public Game() {}
 
     public void addCar(String name) {
-        this.addCar(name, MissionRandomGenerator.getInstance());
-    }
-
-    public void addCar(String name, RandomGenerator randomGenerator) {
-        Car car = new Car(name, randomGenerator);
+        Car car = new Car(name);
         cars.add(car);
     }
 

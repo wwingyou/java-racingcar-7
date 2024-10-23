@@ -1,5 +1,7 @@
 package racingcar;
 
+import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
+
 /**
  * Car
  */
@@ -7,19 +9,13 @@ public class Car {
 
     private String name;
     private int progress;
-    private RandomGenerator randomGenerator;
 
     public Car(String name) {
-        this(name, MissionRandomGenerator.getInstance());
-    }
-
-    public Car(String name, RandomGenerator randomGenerator) {
         this.name = name;
-        this.randomGenerator = randomGenerator;
     }
 
     public void moveOrStop() {
-        int randomNumber = randomGenerator.getRandomNumber();
+        int randomNumber = pickNumberInRange(0, 9);
         if (randomNumber >= 4) {
             progress += 1;
         }
